@@ -1,0 +1,28 @@
+jmeter.bat -Jusers=1 -Jiterations=2 -Jrampup=1 -n -t perfTest-new.jmx -l testresults.jtl
+
+jmeter.bat -Jusers=2 -Jiterations=2 -Jrampup=2 -n -t C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\perfTest-new.jmx -l C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\testresults-5-user-5-itr.jtl > C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\output.log
+
+jmeter.bat -Jusers=1 -Jiterations=1 -Jrampup=1 -n -t C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\perfTest-new.jmx -l C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\testresults-5-user-5-itr.jtl
+
+jmeter.bat -Jusers=1 -Jiterations=1 -Jrampup=1 -Jjmeter.save.saveservice.samplerData=true -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml -n -t C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\bld-Vanilla-PerfTest.jmx -l C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\testresults-1-user-1-itr.jtl
+
+
+jmeter.bat -Jusers=1 -Jiterations=1 -Jrampup=1 -Jjmeter.save.saveservice.samplerData=true -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml -n -t C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\bld-Vanilla-Till-Murex-PerfTest.jmx -l C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\testresults-murex.jtl
+
+cd C:\Users\<user>\Desktop\TechnicalStuff\JMeter\Raw-Jmeter\apache-jmeter-3.2\bin
+
+JMeterPluginsCMD.bat --generate-csv C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\Results\aggregateResults.csv --input-jtl C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\Results\testresults-till-execution-10-100-5.jtl --plugin-type AggregateReport
+
+jmeter.bat -Jusers=2 -Jiterations=1 -Jrampup=1 -n -t C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\selenium-performance-testing\script.jmx -l C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\results-ui.jtl > C:\Users\<user>\Desktop\TechnicalStuff\sbAutomation\Pricing_Team\bld\jmeter-plugin\dt-Repo\dt-bld-jmeter-plugin\src\test\resources\jmeter\output.log
+
+*****************************************888
+rem @echo off
+del %cd%\output.log
+del %cd%\results-ui.jtl
+echo "Users: " %1
+echo "Iterations: " %2
+echo "Rampup: " %3
+C:\Users\1531411\Desktop\TechnicalStuff\JMeter\apache-jmeter-3.2\bin\jmeter.bat -Jusers=1 -Jiterations=1 -Jrampup=1 -n -t %cd%\script.jmx -l %cd%\results-ui.jtl 
+rem > %cd%\selenium-performance-testing\output.log
+pause
+
